@@ -76,6 +76,9 @@ public class Mouse_Control : MonoBehaviour {
 	}
 	void Update()
 	{
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			FindObjectOfType<DialogueManager> ().DisplayNextSentence ();
+		}
 		Physics2D.gravity = gravity;
 		/*inkBar.sizeDelta = new Vector2(
 			drawLimit, 

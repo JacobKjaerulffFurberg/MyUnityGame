@@ -27,7 +27,6 @@ public class drawTrajectory : MonoBehaviour {
 		for (int i = 0; i < count; i++) 
 		{
 			lr.SetPosition(i, pos);
-			Debug.Log (Physics2D.gravity);
 			velocity += Physics2D.gravity * Time.fixedDeltaTime;
 			pos += velocity * Time.fixedDeltaTime;  
 		}

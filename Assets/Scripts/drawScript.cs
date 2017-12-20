@@ -83,7 +83,8 @@ public class drawScript : MonoBehaviour
 
 	protected virtual void Update ()
 	{
-		if ( Input.GetMouseButtonDown ( 0 ) )
+		
+		if ( Input.GetMouseButtonUp ( 0 ) )
 		{
 			freeze = true;
 			//Reset ();
@@ -103,20 +104,29 @@ public class drawScript : MonoBehaviour
 				//Debug.Log (count);
 				m_LineRenderer.positionCount = m_Points.Count;
 				m_LineRenderer.SetPosition ( m_LineRenderer.positionCount - 1, mousePosition );
-				if ( m_EdgeCollider2D != null && m_AddCollider && m_Points.Count > 1 )
-				{
+				if (m_EdgeCollider2D != null && m_AddCollider && m_Points.Count > 1) {
 					m_EdgeCollider2D.points = m_Points.ToArray ();
 
 					Vector2[] temp = m_EdgeCollider2D.points;
 					Vector2 offset = new Vector2 (1.5f, -1.5f);
-					for (int i = 0; i < m_EdgeCollider2D.pointCount; i++)
-					{
-						temp[i] += offset;
+					for (int i = 0; i < m_EdgeCollider2D.pointCount; i++) {
+						temp [i] += offset;
 					}
 
 					m_EdgeCollider2D.points = temp;
+				} else {
+					//m_EdgeCollider2D.pointCount = 2;
+					Vector2[] array = new Vector2[2];
+					array [0] = Vector2.zero;
+					array [1] = Vector2.zero;
+					m_EdgeCollider2D.points = array;
 				}
 			}
+
+		}
+
+		if (freeze && m_Points.Count < 2) {
+			Destroy (this.gameObject);
 		}
 	}
 
@@ -153,7 +163,7 @@ public class drawScript : MonoBehaviour
 	protected virtual void CreateDefaultEdgeCollider2D ()
 	{
 		m_EdgeCollider2D = gameObject.AddComponent<EdgeCollider2D> ();
-		m_EdgeCollider2D.offset = (new Vector2 (0.075f, -0.075f));
+		m_EdgeCollider2D.offset = (new Vector2 (0.15f, -0.075f));
 		m_EdgeCollider2D.edgeRadius = 0.1f;
 	}
 
