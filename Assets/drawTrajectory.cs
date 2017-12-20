@@ -11,6 +11,9 @@ public class drawTrajectory : MonoBehaviour {
 		lr = GetComponent<LineRenderer> ();
 		lr.enabled = true;
 		lr.positionCount = 100;
+		Vector2 newPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		/*lr.material.SetTextureOffset("_MainTex", new Vector2(Time.timeSinceLevelLoad * 4f, 0f));
+		lr.material.SetTextureScale("_MainTex", new Vector2(newPosition.magnitude, 1f));*/
 	}
 	
 	// Update is called once per frame

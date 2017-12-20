@@ -153,7 +153,8 @@ public class drawScript : MonoBehaviour
 	protected virtual void CreateDefaultEdgeCollider2D ()
 	{
 		m_EdgeCollider2D = gameObject.AddComponent<EdgeCollider2D> ();
-		m_EdgeCollider2D.edgeRadius = 0.2f;
+		m_EdgeCollider2D.offset = (new Vector2 (0.075f, -0.075f));
+		m_EdgeCollider2D.edgeRadius = 0.1f;
 	}
 
 	public void changePositions(Vector3[] positions)

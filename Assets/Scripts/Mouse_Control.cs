@@ -19,12 +19,10 @@ public class Mouse_Control : MonoBehaviour {
 	// 2 - Store the movement
 	private Vector2 movement;
 	public float speed = 10;
-	private bool curly = true;
 	public float drawDistance = 0.4f;
 
 	public int drawLimit = 200000000;
 
-	private Vector2 position = new Vector2(0f,0f);
 
 	public GameObject parentFloor = null;
 
@@ -63,6 +61,7 @@ public class Mouse_Control : MonoBehaviour {
 
 	public Vector3 gravity;
 	public Vector3 defaultGravity;
+	public Material fastLineMaterial;
 
 	[SerializeField]
 	protected LineRenderer m_LineRenderer;
@@ -141,6 +140,7 @@ public class Mouse_Control : MonoBehaviour {
 				temp.GetComponent<forceBall> ().enabled = true;
 				temp.GetComponent<LineRenderer> ().startColor = Color.red;
 				temp.GetComponent<LineRenderer> ().endColor = Color.red;
+				temp.GetComponent<LineRenderer> ().material = fastLineMaterial; 
 			}
 			temp.transform.parent = transform; 
 			temp.GetComponent<drawScript> ().limit = 200;
@@ -382,10 +382,6 @@ Screen.height - Mathf.Max(start.y, end.y), Mathf.Abs(start.x - end.x), Mathf.Abs
 					script.offset = new Vector2 (Mathf.Abs (pickedObjects [0].transform.position.x - mousePosInWorld.x), Mathf.Abs (pickedObjects [0].transform.position.y - mousePosInWorld.y));
 				}
 
-				if (pickedObjects == null) {
-
-					position = mousePosInWorld;
-				}
 			}
 		}
 	}

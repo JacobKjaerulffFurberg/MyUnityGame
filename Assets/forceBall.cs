@@ -12,14 +12,15 @@ public class forceBall : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnCollisionStay2D (Collision2D col)
+	void OnCollisionEnter2D (Collision2D col)
 	{
-		Vector2 direction = findDirectionOfNearestPoint (col.transform.position);
-		if (col.transform.tag == "Player") 
-		{
-			Debug.Log ("forced: " + col.transform.name);
-			Vector2 force = direction * speed;
-			col.transform.GetComponent<Rigidbody2D> ().AddForce (force);
+		if (this.enabled == true) {
+			Vector2 direction = findDirectionOfNearestPoint (col.transform.position);
+			if (col.transform.tag == "Player") {
+				Debug.Log ("forced: " + direction);
+				Vector2 force = direction * speed;
+				col.transform.GetComponent<Rigidbody2D> ().AddForce (force);
+			}
 		}
 	}
 
@@ -27,7 +28,7 @@ public class forceBall : MonoBehaviour {
 	{
 		Vector2[] points = GetComponent<EdgeCollider2D> ().points;
 
-		float shortestDistance = 20f;
+		float shortestDistance = 2000f;
 		int closestPointIndex = 0;
 		for (int i = 0; i < points.Length; i++)
 		{
@@ -36,10 +37,11 @@ public class forceBall : MonoBehaviour {
 				closestPointIndex = i;
 			}	
 		}
-		if (closestPointIndex == points.Length) {
-			closestPointIndex -= 1;
+		if (closestPointIndex == 0) {
+			closestPointIndex = 1;
 		}
-		Vector2 direction = points [closestPointIndex] - points [closestPointIndex + 1];
+		Vector2 direction = points [closestPointIndex] - points [closestPointIndex - 1];
+		direction.Normalize ();
 		return direction;
 	}
 
