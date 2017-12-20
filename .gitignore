@@ -31,4 +31,10 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
+*.unitypackag
+
+Library
+Temp
+UnityPackageManager
+etc
+obj
