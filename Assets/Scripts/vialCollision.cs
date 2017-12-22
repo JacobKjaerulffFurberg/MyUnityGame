@@ -24,7 +24,7 @@ public class vialCollision : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.layer == LayerMask.NameToLayer ("Ball")) 
+		if (col.gameObject.tag == "Player") 
 		{
 			Explode ();
 		}
