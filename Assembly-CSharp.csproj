@@ -51,13 +51,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\birdCollision.cs" />
+     <Compile Include="Assets\blink.cs" />
      <Compile Include="Assets\bulletCollision.cs" />
      <Compile Include="Assets\createFire.cs" />
      <Compile Include="Assets\drawTrajectory.cs" />
      <Compile Include="Assets\DropScript.cs" />
+     <Compile Include="Assets\flight.cs" />
      <Compile Include="Assets\followMouse.cs" />
      <Compile Include="Assets\forceBall.cs" />
      <Compile Include="Assets\maxCamera.cs" />
+     <Compile Include="Assets\MultipleTargetCamera.cs" />
      <Compile Include="Assets\rope.cs" />
      <Compile Include="Assets\Scripts\Attraction.cs" />
      <Compile Include="Assets\Scripts\Blob.cs" />

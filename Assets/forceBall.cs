@@ -6,6 +6,7 @@ public class forceBall : MonoBehaviour {
 
 
 	public float speed = 25f;
+	private float defaultBounciness = 0.98f;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,13 +15,30 @@ public class forceBall : MonoBehaviour {
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		if (this.enabled == true) {
+		Debug.Log (col.transform.tag);
+		if (this.enabled == true && col.transform.tag == "Player") 
+		{
+			col.collider.sharedMaterial.bounciness = 0f;
 			Vector2 direction = findDirectionOfNearestPoint (col.transform.position);
-			if (col.transform.tag == "Player") {
-				Debug.Log ("forced: " + direction);
-				Vector2 force = direction * speed;
-				col.transform.GetComponent<Rigidbody2D> ().AddForce (force);
-			}
+
+
+			Vector2 force = direction * speed;
+			col.transform.GetComponent<Rigidbody2D> ().AddForce (force);
+
+		}
+	}
+	void OnCollisionExit2D (Collision2D col)
+	{
+		Debug.Log (col.transform.tag);
+		if (this.enabled == true && col.transform.tag == "Player") 
+		{
+			col.collider.sharedMaterial.bounciness = defaultBounciness;
+			Vector2 direction = findDirectionOfNearestPoint (col.transform.position);
+
+			//Debug.Log ("forced: " + direction);
+			Vector2 force = direction * speed;
+			col.transform.GetComponent<Rigidbody2D> ().AddForce (force);
+
 		}
 	}
 

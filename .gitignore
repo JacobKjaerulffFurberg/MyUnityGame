@@ -33,8 +33,9 @@ sysinfo.txt
 *.apk
 *.unitypackag
 
-Library
-Temp
-UnityPackageManager
-etc
-obj
+Library/
+Temp/
+UnityPackageManager/
+etc/
+obj/
+

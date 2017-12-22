@@ -137,6 +137,7 @@ public class Mouse_Control : MonoBehaviour {
 
 		if (drawActivated && Input.GetMouseButtonDown(0)) 
 		{
+			FindObjectOfType<MultipleTargetCamera> ().activated = false;
 			GameObject temp = Instantiate (lineDrawer) as GameObject;
 			if (Input.GetKey(KeyCode.LeftShift))
 			{
@@ -148,6 +149,9 @@ public class Mouse_Control : MonoBehaviour {
 			temp.transform.parent = transform; 
 			temp.GetComponent<drawScript> ().limit = 200;
 			//lineDrawer.SetActive (true);
+		}
+		if (drawActivated && Input.GetMouseButtonUp (0)) {
+			FindObjectOfType<MultipleTargetCamera> ().activated = true;
 		}
 
 

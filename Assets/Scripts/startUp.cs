@@ -34,6 +34,7 @@ public class startUp : MonoBehaviour {
 		GameObject temp = Instantiate (ball, ballHolder.transform.position, Quaternion.identity) as GameObject;
 		temp.transform.parent = parentObject.transform;
 
+		FindObjectOfType<MultipleTargetCamera> ().addTarget (temp.transform);
 		/*for (float i = 0; i < ballAmount; i++) 
 		{
 			Vector2 point = new Vector2 (startPoint.x + i, startPoint.y);
