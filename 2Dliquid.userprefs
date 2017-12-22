@@ -1,14 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/blink.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/forceBall.cs" Line="21" Column="1" />
-      <File FileName="Assets/flight.cs" Line="33" Column="41" />
-      <File FileName="Assets/MultipleTargetCamera.cs" Line="32" Column="4" />
-      <File FileName="Assets/birdCollision.cs" Line="28" Column="30" />
+      <File FileName="Assets/Scripts/Mouse_Control.cs" Line="140" Column="64" />
+      <File FileName="Assets/forceBall.cs" Line="1" Column="1" />
+      <File FileName="Assets/flight.cs" Line="1" Column="1" />
+      <File FileName="Assets/birdCollision.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/startUp.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Mouse_Control.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="66" Column="3" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="4" Column="19" />
       <File FileName="Assets/blink.cs" Line="14" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -61,7 +61,6 @@
      <Compile Include="Assets\followMouse.cs" />
      <Compile Include="Assets\forceBall.cs" />
      <Compile Include="Assets\maxCamera.cs" />
-     <Compile Include="Assets\MultipleTargetCamera.cs" />
      <Compile Include="Assets\rope.cs" />
      <Compile Include="Assets\Scripts\Attraction.cs" />
      <Compile Include="Assets\Scripts\Blob.cs" />
@@ -76,6 +75,7 @@
      <Compile Include="Assets\Scripts\LavaCol.cs" />
      <Compile Include="Assets\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Mouse_Control.cs" />
+     <Compile Include="Assets\Scripts\MultipleTargetCamera.cs" />
      <Compile Include="Assets\Scripts\Rope.cs" />
      <Compile Include="Assets\Scripts\ropeCol.cs" />
      <Compile Include="Assets\Scripts\startUp.cs" />
